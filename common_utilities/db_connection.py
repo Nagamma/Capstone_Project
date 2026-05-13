@@ -1,7 +1,6 @@
 from sqlalchemy import create_engine
 from common_utilities.db_config import *
-#database connections
-#Target DB connection
+
+#DB connection
 mysql_engine = create_engine(f'mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}')
-print("Password=",DB_PASSWORD)
-print(mysql_engine)
+oracle_engine = create_engine(f'oracle+oracledb://{ORACLE_USER}:{ORACLE_PASSWORD}@localhost:{ORACLE_PORT}/?service_name={ORACLE_SERVICE}')
