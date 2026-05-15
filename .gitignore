@@ -1,4 +1,4 @@
 # PyCharm
 .idea/
 *.iml
-common_utilities/db_config.py
+project_config/etlconfig.py
