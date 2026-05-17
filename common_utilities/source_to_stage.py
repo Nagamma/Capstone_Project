@@ -25,5 +25,5 @@ def read_source_database(sql,database_type):
 
 
 def load_data_to_stage(df,table_name):
-    df.to_sql(table_name,mysql_engine,index=False)
+    df.to_sql(table_name,mysql_engine,if_exists='replace',index=False)
 

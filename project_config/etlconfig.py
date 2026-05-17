@@ -12,4 +12,12 @@ ORACLE_HOST = "localhost"
 ORACLE_PORT = 1521
 ORACLE_SERVICE= "xe"
 
+# Linux Server details
+LINUX_USER = "nagamma"
+LINUX_PASSWORD = "Nagu@1990"
+LINUX_HOST = "10.112.133.160"
+LINUX_PORT = 22
+LINUX_REMOTE_PRODUCT_DATA_FILE_PATH = "/home/nagamma/Documents/productData/product_data.csv"
+LOCAL_PRODUCT_DATA_FILE_PATH = "source_systems/product_data_from_linux.csv"
+
 

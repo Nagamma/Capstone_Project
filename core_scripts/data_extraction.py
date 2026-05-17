@@ -1,5 +1,4 @@
-
-
+from common_utilities.download_files_from_remote import download_file_from_linux
 from common_utilities.source_to_stage import *
 from project_config.logger_config import logger
 
@@ -8,6 +7,7 @@ class DataExtraction:
     def extract_product_data_load_stag(self,file_path,file_type):
         logger.info("Product data extraction started.....")
         try:
+            download_file_from_linux(self,logger)
             df = read_source_file(file_path,file_type)
             load_data_to_stage(df,"stag_product")
         except Exception as e:
@@ -56,9 +56,9 @@ class DataExtraction:
 
 if __name__ == "__main__":
     de = DataExtraction()
-    de.extract_product_data_load_stag("source_systems/product_data.csv","csv")
-    de.extract_sales_data_load_stag("source_systems/sales_data.csv", "csv")
-    de.extract_inventory_data_load_stag("source_systems/inventory_data.xml", "xml")
-    de.extract_suplier_data_load_stag("source_systems/supplier_data.json", "json")
-    de.extract_stores_data_load_stage("oracle")
+    de.extract_product_data_load_stag("source_systems/product_data_from_linux.csv","csv")
+    # de.extract_sales_data_load_stag("source_systems/sales_data.csv", "csv")
+    # de.extract_inventory_data_load_stag("source_systems/inventory_data.xml", "xml")
+    # de.extract_suplier_data_load_stag("source_systems/supplier_data.json", "json")
+    # de.extract_stores_data_load_stage("oracle")
 
